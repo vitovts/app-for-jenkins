@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    
+    environment{
+        PROJECT_NAME = "PIPELINE"
+        OWNER_NAME = "WS"
+    }
+    
+    stages {
+        stage("1.BUILD") {
+            steps {
+                echo "Start of Stage Build: $PROJECT_NAME"
+                echo "Build .. Build"
+                sh "uptime"
+                echo "End of Stage Build"
+            }
+        }
+        stage("2.TEST") {
+            steps {
+                echo "Start of Stage TEST"
+                echo "TEST .. TEST"
+                echo "End of Stage TEST"
+            }
+        }       
+        stage("1.DEPLOY") {
+            steps {
+                echo "Start of Stage Deploy"
+                echo "Deploy .. Deploy"
+                echo "End of Stage Deploy"
+            }
+        }
+         stage("4.CELEBRATE") {
+            steps {
+                echo "GRATULATION"
+                echo "FINISH"
+                echo "Owner: $OWNER_NAME"
+                echo "sent to email"
+                echo "set to messages"
+            }
+        }
+    }
+}
