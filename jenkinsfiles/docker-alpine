@@ -1,0 +1,43 @@
+pipeline {
+    agent { docker { image 'alpine:lts' }}
+
+    stages {
+        stage("1.BUILD") {
+            steps {
+                echo "Start of Stage Build"
+                echo "Build .. Build"
+                echo "End of Stage Build"
+            }
+        }
+        stage("2.TEST") {
+            steps {
+                echo "Start of Stage TEST"
+                echo "TEST .. TEST"
+                echo "End of Stage TEST"
+            }
+        }
+        stage("3.DEPLOY") {
+            steps {
+                echo "Start of Stage Deploy"
+                echo "Deploy .. Deploy"
+                sh '''
+                echo "1"
+                echo "2"
+                '''
+                sh "python --version"
+                echo "End of Stage Deploy"
+            }
+        }
+        stage("4.CELEBRATE") {
+            steps {
+                echo "GRATULATION"
+                echo "FINISH"
+                echo "sent to email"
+                echo "set to messages"
+            }
+        }
+        
+        
+    }
+            
+}
