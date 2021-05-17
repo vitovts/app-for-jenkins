@@ -24,7 +24,7 @@ pipeline {
                 echo "1"
                 echo "2"
                 '''
-                sh "python --version"
+                sh "uname -a"
                 echo "End of Stage Deploy"
             }
         }
