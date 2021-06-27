@@ -1,6 +1,6 @@
 #!groovy
-// Check ub1 properties
-properties([disableConcurrentBuilds()])
+// Check ub1804 properties
+properties([disableConcurrentBuilds()]) //запретить одновременные сборки
 
 pipeline {
     agent { 
