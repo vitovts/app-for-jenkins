@@ -7,13 +7,13 @@ pipeline {
         label 'master'
         }
     options {
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')) //хранить логи и артекфакты - 10 
+        timestamps() // выводить временные отметки
     }
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@ub1804 \'hostname\''
+                sh 'ssh root@ub1804 \'hostname\'' 
             }
         }
         stage("Second step") {
